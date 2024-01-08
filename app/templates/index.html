@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html> <!-- https://validator.w3.org/ can be used to check for issues -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://polyfill.io/v3/polyfill.min.js"></script> <!-- automatically identify and provide all of the polyfills, to run the same on older browsers -->
+    <title>Evgenia & Roman wedding</title>
+  </head>
+  <body>
+
+    <nav id="navbar">
+      <ul>
+        <li><a href="#memo">Памятка</a></li>
+        <li><a href="#survey">Опрос</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+      </ul>
+    </nav>
+
+    <section id="memo">
+      <h1>Памятка</h1>
+      <div class="memo-form">
+        <p>Роспись (по желанию): 1 июня 20:20, <a href="#zags-map">Дворец бракосочетания №2 (Фурштатская 52)</a></p>
+        <p>Фотосессия (по желанию): 2 июня 15:00, <a href="#rest-outside">двор "Сезоны в Парке" (Писарева 3А)</a></p>
+        <p>Ресторан: 2 июня 16:00, <a href="#rest-map">Ресторан "Сезоны в Парке" (Писарева 3А)</a></p>
+        <p><a href="#dresscode">TODO: Дресскод такой-то</a></p>
+      </div>
+    </section>
+
+    <section id="survey">
+      <h1>Опрос</h1>
+      <div class="survey-form">
+        <form action="#" method="POST">
+            <div>
+                <label for="name">Ваше имя: </label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <input type="radio" id="alone" name="pair" value="alone" checked>
+                <label for="alone">Буду один </label>
+                <input type="radio" id="together" name="pair" value="together">
+                <label for="alone">С парой </label>                
+            </div>
+            <div>
+                <label for="zags">Идете на регистрацию? </label>
+                <input type="checkbox" id="zags" value="yes">
+            </div>
+            <div>
+                <label for="drink">Что пьете?</label>                
+                <input type="text" id="drink">
+            </div>
+            <div>
+                <input type="radio" id="fish" name="food" value="fish" checked>
+                <label for="alone">Рыба </label>
+                <input type="radio" id="meat" name="food" value="meat">
+                <label for="alone">Мясо </label>
+                <input type="radio" id="vegs" name="food" value="vegs">
+                <label for="alone">Овощи </label> 
+            </div>
+            <input type="submit" value="Отправить">
+        </form>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h1>Галерея</h1>
+      <div class="photos-grid">
+        <a
+          class="photo-tile"
+          href="http://kzags.gov.spb.ru/palaces/24"
+          target="_blank"
+        >
+          <img src="{{ url_for('static', filename='zags.jpg') }}" alt="Дворец бракосочетания">
+          <p>Дворец бракосочетания №2</p>
+        </a>
+        <a
+          class="photo-tile"
+          id="rest-outside"
+          href="https://yandex.ru/maps/-/CDq3u4KH"
+          target="_blank"
+        >
+          <img src="{{ url_for('static', filename='outside.jpg') }}" alt="Двор ресторана Сезоны в Парке">
+          <p>Двор "Сезоны в Парке"</p>
+        </a>
+        <a
+          class="photo-tile"
+          href="https://barsezony.ru/vparke"
+          target="_blank"
+        >
+          <img src="{{ url_for('static', filename='inside.jpeg') }}" alt="Ресторан Сезоны в Парке">
+          <p>Ресторан "Сезоны в Парке"</p>
+        </a>
+
+        <iframe
+            id="zags-map"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A5c15ef690e7728867793347a6ff75034dfb0c9af05bf137430db23c0a17cf4cc&amp;source=constructor"
+            width="100%"
+            height="100%"
+            frameborder="0"
+        ></iframe>
+        <a
+            id="dresscode"
+            class="photo-tile"
+        >
+          <img src="{{ url_for('static', filename='dresscode.jpg') }}" alt="Пример дресскода">
+          <p>Пример дресскода</p>
+        </a>
+        <iframe
+            id="rest-map"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A2434132ae32b5528063fd9c8c110c8e0f74c413913a6e77f29c8525491e80cf4&amp;source=constructor"
+            width="100%"
+            height="100%"
+            frameborder="0"
+        ></iframe>
+      </div>
+    </section>
+  </body>
+</html>
