@@ -5,12 +5,18 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{31E8D205-3102-4495-BF04-4A3B52364D6D}"
 	ProjectSection(SolutionItems) = preProject
+		app.db = app.db
+		app.yaml = app.yaml
 		config.py = config.py
+		quests.html = quests.html
+		requirements.txt = requirements.txt
 		website.py = website.py
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{C993211B-5A01-4626-BFCF-4F505CC61947}"
 	ProjectSection(SolutionItems) = preProject
+		app\forms.py = app\forms.py
+		app\models.py = app\models.py
 		app\routes.py = app\routes.py
 		app\__init__.py = app\__init__.py
 	EndProjectSection
@@ -18,6 +24,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{D15EB3D4-63D7-4AB1-9540-FA1039479F30}"
 	ProjectSection(SolutionItems) = preProject
 		app\templates\index.html = app\templates\index.html
+		app\templates\quests.html = app\templates\quests.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "static", "static", "{B6E36D27-15F7-4B9E-A5E8-141E00D6BBD6}"

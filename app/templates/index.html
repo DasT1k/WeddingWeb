@@ -31,36 +31,40 @@
     <section id="survey">
       <h1>Опрос</h1>
       <div class="survey-form">
-        <form action="#" method="POST">
+        <form action="/submit" method="POST">
+            {{ form.hidden_tag() }} <!-- generates a hidden field that includes a token that is used to protect the form against CSRF attacks -->
             <div>
                 <label for="name">Ваше имя: </label>
-                <input type="text" id="name">
-            </div>
-            <div>
-                <input type="radio" id="alone" name="pair" value="alone" checked>
-                <label for="alone">Буду один </label>
-                <input type="radio" id="together" name="pair" value="together">
-                <label for="alone">С парой </label>                
+                <input type="text" id="name" name="name" required maxlength="80" spellcheck="false">
             </div>
             <div>
                 <label for="zags">Идете на регистрацию? </label>
-                <input type="checkbox" id="zags" value="yes">
+                <input type="checkbox" id="zags" name="zags" value="1">
+                <input type="hidden" name="zags" value="0"> <!-- hidden input with same name as checkbox helps to resolve bad request if checkbox not selected ("neither the name nor the value is submitted to the server", so it takes value of this hidden input as it has same name) -->
             </div>
             <div>
                 <label for="drink">Что пьете?</label>                
-                <input type="text" id="drink">
+                <input type="text" id="drink" name="drink" maxlength="80">
             </div>
             <div>
                 <input type="radio" id="fish" name="food" value="fish" checked>
-                <label for="alone">Рыба </label>
+                <label for="fish">Рыба </label>
                 <input type="radio" id="meat" name="food" value="meat">
-                <label for="alone">Мясо </label>
+                <label for="meat">Мясо </label>
                 <input type="radio" id="vegs" name="food" value="vegs">
-                <label for="alone">Овощи </label> 
+                <label for="vegs">Овощи </label> 
             </div>
             <input type="submit" value="Отправить">
         </form>
       </div>
+      
+      <div class="popup-overlay" id="popup">
+        <div class="popup-msg">
+            <p>Благодарим за предоставленную информацию</p>
+            <a class="popup-close" href="#survey">&times;</a>
+        </div>
+      </div>
+
     </section>
 
     <section id="gallery">
