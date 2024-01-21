@@ -198,3 +198,33 @@ iframe {
     --font-size: 1.5rem;
   }
 }
+
+/* quests.html */
+
+table {
+  border-collapse: collapse;
+  margin: 30px;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.page-items, table {
+    color: var(--custom-gray);
+}
+
+.page-items, .pagination {
+    margin: 10px 30px;
+    font-size: calc(var(--font-size) / 1.5);
+}
+
+.pagination strong, .pagination a {
+    color: var(--custom-blue);    
+}
+
+.pagination a {
+    text-decoration: underline;
+}

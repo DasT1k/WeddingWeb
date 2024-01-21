@@ -22,8 +22,8 @@
       <h1>Памятка</h1>
       <div class="memo-form">
         <p>Роспись (по желанию): 1 июня 20:20, <a href="#zags-map">Дворец бракосочетания №2 (Фурштатская 52)</a></p>
-        <p>Фотосессия (по желанию): 2 июня 15:00, <a href="#rest-outside">двор "Сезоны в Парке" (Писарева 3А)</a></p>
-        <p>Ресторан: 2 июня 16:00, <a href="#rest-map">Ресторан "Сезоны в Парке" (Писарева 3А)</a></p>
+        <p>Фотосессия (по желанию): 2 июня 16:00, <a href="#rest-outside">двор "Сезоны в Парке" (Писарева 3А)</a></p>
+        <p>Ресторан: 2 июня 17:00, <a href="#rest-map">Ресторан "Сезоны в Парке" (Писарева 3А)</a></p>
         <p><a href="#dresscode">TODO: Дресскод такой-то</a></p>
       </div>
     </section>
@@ -51,8 +51,8 @@
                 <label for="fish">Рыба </label>
                 <input type="radio" id="meat" name="food" value="meat">
                 <label for="meat">Мясо </label>
-                <input type="radio" id="vegs" name="food" value="vegs">
-                <label for="vegs">Овощи </label> 
+                <input type="radio" id="bird" name="food" value="bird">
+                <label for="bird">Птица </label> 
             </div>
             <input type="submit" value="Отправить">
         </form>
@@ -107,8 +107,8 @@
             id="dresscode"
             class="photo-tile"
         >
-          <img src="{{ url_for('static', filename='dresscode.jpg') }}" alt="Пример дресскода">
-          <p>Пример дресскода</p>
+          <img src="{{ url_for('static', filename='dresscode.jpg') }}" alt="Цветовая гамма">
+          <p>TODO: Цветовая гамма</p>
         </a>
         <iframe
             id="rest-map"

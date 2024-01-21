@@ -3,12 +3,46 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Questionary results</title>
 </head>
 <body>
-    {% for quest in quests %}
-        {{ quest }}
-        <br>
-    {% endfor %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Имя</th>
+            <th>Загс</th>
+            <th>Напиток</th>
+            <th>Еда</th>
+        </tr>
+        {% for quest in pagination %}
+        <tr>
+            <td>{{ quest.id }}</td>
+            <td>{{ quest.name }}</td>
+            <td>{{ quest.zags }}</td>
+            <td>{{ quest.drink }}</td>
+            <td>{{ quest.food }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th colspan="2">Итого</th>
+            <th>{{ total["zags"] }}</th>
+            <th colspan="2">Мясо: {{ total["meat"] }} / Рыба: {{ total["fish"] }} / Птица: {{ total["bird"] }}</th>
+        </tr>
+    </table>
+
+    <div class="page-items"> <!-- Pagination widget below content -->
+        {{ pagination.first }} - {{ pagination.last }} of {{ pagination.total }} answers
+    </div>
+    <div class="pagination">
+        {% for page in pagination.iter_pages() %}
+            {% if page != pagination.page %}
+                <a href="{{ url_for('quests', page=page) }}"> {{ page }} </a>
+            {% else %}
+                <strong> {{ page }} </strong>
+            {% endif %}
+        {% endfor %}
+    </div>
+
 </body>
 </html>
