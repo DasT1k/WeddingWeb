@@ -34,7 +34,7 @@
     <div class="page-items"> <!-- Pagination widget below content -->
         {{ pagination.first }} - {{ pagination.last }} of {{ pagination.total }} answers
     </div>
-    <div class="pagination">
+    <div class="pagination">Pages: 
         {% for page in pagination.iter_pages() %}
             {% if page != pagination.page %}
                 <a href="{{ url_for('quests', page=page) }}"> {{ page }} </a>

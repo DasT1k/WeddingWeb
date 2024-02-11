@@ -5,6 +5,10 @@
 
 # Manually added for WeddingWeb project
 app.db
+test.db
+htmlcov/
+.pytest_cache/
+venv/
 
 # User-specific files
 *.rsuser

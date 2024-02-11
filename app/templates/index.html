@@ -22,9 +22,10 @@
       <h1>Памятка</h1>
       <div class="memo-form">
         <p>Роспись (по желанию): 1 июня 20:20, <a href="#zags-map">Дворец бракосочетания №2 (Фурштатская 52)</a></p>
-        <p>Фотосессия (по желанию): 2 июня 16:00, <a href="#rest-outside">двор "Сезоны в Парке" (Писарева 3А)</a></p>
+        <p>Фуршет: 2 июня 16:00, <a href="#rest-outside">двор "Сезоны в Парке" (Писарева 3А)</a></p>
         <p>Ресторан: 2 июня 17:00, <a href="#rest-map">Ресторан "Сезоны в Парке" (Писарева 3А)</a></p>
-        <p><a href="#dresscode">TODO: Дресскод такой-то</a></p>
+        <p><a href="#palette">Мы будем благодарны, если Вы поддержите цветовое решение свадьбы</a></p>
+        <p>P.S. пожалуйста, не дарите нам цветы, мы уедем и не успеем ими полюбоваться </p>
       </div>
     </section>
 
@@ -47,12 +48,12 @@
                 <input type="text" id="drink" name="drink" maxlength="80">
             </div>
             <div>
-                <input type="radio" id="fish" name="food" value="fish" checked>
-                <label for="fish">Рыба </label>
-                <input type="radio" id="meat" name="food" value="meat">
-                <label for="meat">Мясо </label>
-                <input type="radio" id="bird" name="food" value="bird">
-                <label for="bird">Птица </label> 
+                <input type="radio" id="fish" name="food" value="fish" checked title="Треска, отварной картофель стоун и соус айоли">
+                <label for="fish" title="Треска, отварной картофель стоун и соус айоли">Рыба </label>
+                <input type="radio" id="meat" name="food" value="meat" title="Щёчки, полба и пастернак">
+                <label for="meat" title="Щёчки, полба и пастернак">Мясо </label>
+                <input type="radio" id="bird" name="food" value="bird" title="Жареный цыпленок с ореховым соусом">
+                <label for="bird" title="Жареный цыпленок с ореховым соусом">Птица </label>
             </div>
             <input type="submit" value="Отправить">
         </form>
@@ -104,11 +105,11 @@
             frameborder="0"
         ></iframe>
         <a
-            id="dresscode"
+            id="palette"
             class="photo-tile"
         >
-          <img src="{{ url_for('static', filename='dresscode.jpg') }}" alt="Цветовая гамма">
-          <p>TODO: Цветовая гамма</p>
+          <img src="{{ url_for('static', filename='palette.png') }}" alt="Цветовая гамма">
+          <p>Цветовая гамма</p>
         </a>
         <iframe
             id="rest-map"

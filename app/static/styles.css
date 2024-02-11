@@ -1,8 +1,8 @@
 ﻿:root {
   --custom-gray: #303841; /* https://webaim.org/resources/contrastchecker/ */
-  --custom-blue: #23374A; /* contrast ratio blue:white 10.7:1 */
-  --custom-white: #f0f0f0; /* contrast ratio gray:white 10.4:1 */
-  --custom-red: #C3374A; /* contrast ratio red:white 4.6:1 */
+  --custom-blue: #E5F4FF; /* contrast ratio blue:gray 10.6:1 */
+  --custom-white: #FFFFF7; /* contrast ratio white:gray 11.8:1 */
+  --custom-red: #6A1B21; /* contrast ratio red:white 11.6:1 */
   --gap-size: 2rem;
   --font-size: 2rem;
 }
@@ -13,8 +13,8 @@
 }
 
 body, a {
-  font-family: 'Raleway';
-  color: var(--custom-white);
+    font-family: 'Raleway', sans-serif;
+  color: var(--custom-gray);
   line-height: 1.4;
 }
 
@@ -39,11 +39,13 @@ body, a {
   display: block;
   padding: var(--gap-size);
   font-size: var(--font-size);
+  color: var(--custom-white);
   transition: background 1s linear;
 }
 
 #navbar ul a:hover {
-  background: var(--custom-gray);
+  background: var(--custom-white);
+  color: var(--custom-red);
 }
 
 a {
@@ -64,7 +66,7 @@ a {
 }
 
 #memo {
-    background: linear-gradient(60deg, #3a3d40 0%, #181719 100%);
+    background: var(--custom-white);
 }
 
 .memo-form {
@@ -110,7 +112,7 @@ input[type="submit"] {
     height: calc(var(--font-size) * 1.6);
     width: calc(var(--font-size) * 7);
     font-size: var(--font-size);
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     border: none;
     border-radius: 6px;
     display: flex;
@@ -146,6 +148,7 @@ input[type="submit"]:hover, input[type="submit"]:focus {
     border-radius: 6px;
     max-width: 35%;
     background: var(--custom-red);
+    color: var(--custom-white);
     overflow: auto;
 }
 
@@ -154,6 +157,7 @@ input[type="submit"]:hover, input[type="submit"]:focus {
     top: 10px;
     right: 30px;
     font-size: calc(var(--font-size) * 1.5);
+    color: var(--custom-white);
 }
 
 #gallery {
@@ -161,7 +165,7 @@ input[type="submit"]:hover, input[type="submit"]:focus {
   align-items: center;
   text-align: center;
   padding: var(--gap-size);
-  background: linear-gradient(60deg, #3a3d40 0%, #181719 100%);
+  background: var(--custom-white);
   font-size: calc(var(--font-size) * 1.1);
 }
 
@@ -173,7 +177,7 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 }
 
 .photo-tile {
-  background: var(--custom-gray);
+  background: #C3B5B0; /* contrast ratio beige:gray 6:1 */
 }
 
 .photo-tile img {
@@ -212,7 +216,7 @@ th {
   padding: 10px 20px;
 }
 
-.page-items, table {
+.page-items, .pagination, table {
     color: var(--custom-gray);
 }
 
@@ -222,7 +226,7 @@ th {
 }
 
 .pagination strong, .pagination a {
-    color: var(--custom-blue);    
+    color: black;
 }
 
 .pagination a {
