@@ -8,17 +8,9 @@ def test_client():
     os.environ['CONFIG_TYPE'] = 'config.TestConfig'
 
     app = create_app()
+    app.testing = True
 
-    with app.test_client() as testing_client:
-        with app.app_context():
-            yield testing_client
-
-
-@pytest.fixture
-def init_database(test_client):
-    db.create_all()
-
-    quest1 = Quest(
+    quest1 = Quest(  # test data to put in db
         name="Roman",
         zags=True,
         drink="Whiskey",
@@ -32,10 +24,12 @@ def init_database(test_client):
         food="fish"
     )
 
-    db.session.add(quest1)
-    db.session.add(quest2)
-    db.session.commit()
+    with app.test_client() as testing_client:
+        with app.app_context():
+            db.session.add(quest1)
+            db.session.add(quest2)
+            db.session.commit()
 
-    yield
+            yield testing_client
 
-    db.drop_all()
+            db.drop_all()

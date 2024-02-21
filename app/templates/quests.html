@@ -27,7 +27,7 @@
         <tr>
             <th colspan="2">Итого</th>
             <th>{{ total["zags"] }}</th>
-            <th colspan="2">Мясо: {{ total["meat"] }} / Рыба: {{ total["fish"] }} / Птица: {{ total["bird"] }}</th>
+            <th colspan="2">Meat: {{ total["meat"] }} / Fish: {{ total["fish"] }} / Bird: {{ total["bird"] }}</th>
         </tr>
     </table>
 
@@ -37,7 +37,7 @@
     <div class="pagination">Pages: 
         {% for page in pagination.iter_pages() %}
             {% if page != pagination.page %}
-                <a href="{{ url_for('quests', page=page) }}"> {{ page }} </a>
+                <a href="{{ url_for('routes.quests', page=page) }}"> {{ page }} </a>
             {% else %}
                 <strong> {{ page }} </strong>
             {% endif %}

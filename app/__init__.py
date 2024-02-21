@@ -25,8 +25,11 @@ def create_app():  # application factory
 def initialize_loggers(app, config_type):
     if not os.path.exists('logs'):  # create directory for logs if not exists
         os.mkdir('logs')
-    file_handler = RotatingFileHandler('logs/website.log', maxBytes=102400,
-                                       backupCount=10)  # keep 10 last log files size of 100kb
+    if config_type == 'config.Config':
+        file_handler = RotatingFileHandler('logs/website.log', maxBytes=102400,
+                                           backupCount=10)  # keep 10 last log files size of 100kb
+    else:
+        file_handler = RotatingFileHandler('logs/website_test.log', maxBytes=102400)  # keep only 1 file
     log_format = logging.Formatter(
         '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')  # custom formatting for the log messages
     file_handler.setFormatter(log_format)
