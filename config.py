@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -11,7 +14,7 @@ class Config:
     MAIL_SERVER = 'smtp.sendgrid.net'  # info can be found in dashboard https://app.sendgrid.com/
     MAIL_PORT = 25  # does not work with SSL (port=465)
     MAIL_USERNAME = 'apikey'
-    MAIL_PASSWORD = 'secretKey'
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     MAIL_FROM = 'sayonaradjeronimo@yandex.ru'
     ADMINS = ['romanbokhovko@gmail.com']
 
