@@ -66,6 +66,7 @@ a {
 }
 
 #memo {
+    padding-top: var(--gap-size);
     background: var(--custom-white);
 }
 
@@ -92,6 +93,42 @@ form div {
 
 form label {
     padding-right: var(--gap-size);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext { /* popup for food options */
+    visibility: hidden;
+    min-width: 200%;
+    max-width: 300%;
+    background-color: var(--custom-white);
+    color: var(--custom-gray);
+    font-size: calc(var(--font-size) / 1.4);
+    text-align: center;
+    padding: calc(var(--gap-size) / 1.5);
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.dish .tooltip:nth-child(2) .tooltiptext {
+    transform: translateX(-50%);
+}
+
+.dish .tooltip:nth-child(3) .tooltiptext {
+    transform: translateX(-100%);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 input[type="text"] {
@@ -128,7 +165,7 @@ input[type="submit"]:hover, input[type="submit"]:focus {
   color: var(--custom-red);
 }
 
-.popup-overlay {
+.popup-overlay { /* popup after form submitted */
     position: fixed;
     top: 0; bottom: 0; left: 0; right: 0;
     visibility: hidden;
@@ -140,24 +177,23 @@ input[type="submit"]:hover, input[type="submit"]:focus {
     opacity: 1;
 }
 
+.popup-close {
+    position: relative;
+    left: 50%;
+    font-size: calc(var(--font-size) * 2);
+    color: var(--custom-white);
+}
+
 .popup-msg {
     position: relative;
     text-align: center;
     margin: 40vh auto;
-    padding: calc(var(--gap-size) *1.5);
+    padding: 0 calc(var(--gap-size) * 1.5) calc(var(--gap-size) * 2);
     border-radius: 6px;
-    max-width: 35%;
+    max-width: 50%;
     background: var(--custom-red);
     color: var(--custom-white);
     overflow: auto;
-}
-
-.popup-close {
-    position: absolute;
-    top: 10px;
-    right: 30px;
-    font-size: calc(var(--font-size) * 1.5);
-    color: var(--custom-white);
 }
 
 #gallery {
@@ -169,9 +205,14 @@ input[type="submit"]:hover, input[type="submit"]:focus {
   font-size: calc(var(--font-size) * 1.1);
 }
 
+#gallery h1 {
+    padding: var(--gap-size);
+}
+
 .photos-grid {
-  display: grid; /* min width of each column = 500px, and max count of columns = 3 */
-  grid-template-columns: repeat(auto-fit, minmax(max(500px, (100% - var(--gap-size) * 2) / 3), 1fr));
+  display: grid; /* min width of each column = 300px, and max count of columns = 3 */
+    align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(max(300px, (100% - var(--gap-size) * 2) / 3), 1fr));
   grid-gap: var(--gap-size);
   width: 100%;
 }
@@ -183,7 +224,7 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 .photo-tile img {
   display: block;
   width: 100%;
-  height: calc(100% - 5rem);
+  height: calc(100% - 4rem);
   object-fit: cover;
 }
 
@@ -196,10 +237,17 @@ iframe {
   margin: calc(var(--gap-size) / 2) auto;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   :root {
-    --gap-size: 1.5rem;
-    --font-size: 1.5rem;
+    --gap-size: 1.3rem;
+    --font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    --gap-size: 1.1rem;
+    --font-size: 1.1rem;
   }
 }
 
