@@ -47,22 +47,31 @@
                 <label for="drink">Что пьете?</label>                
                 <input type="text" id="drink" name="drink" maxlength="80">
             </div>
-            <div>
-                <input type="radio" id="fish" name="food" value="fish" checked title="Треска, отварной картофель стоун и соус айоли">
-                <label for="fish" title="Треска, отварной картофель стоун и соус айоли">Рыба </label>
-                <input type="radio" id="meat" name="food" value="meat" title="Щёчки, полба и пастернак">
-                <label for="meat" title="Щёчки, полба и пастернак">Мясо </label>
-                <input type="radio" id="bird" name="food" value="bird" title="Жареный цыпленок с ореховым соусом">
-                <label for="bird" title="Жареный цыпленок с ореховым соусом">Птица </label>
+            <div class="dish">
+                <p class="tooltip">
+                    <input type="radio" id="fish" name="food" value="fish" checked>
+                    <label for="fish">Рыба </label>
+                    <span class="tooltiptext">Треска, отварной картофель стоун и соус айоли</span>
+                </p>
+                <p class="tooltip">
+                    <input type="radio" id="meat" name="food" value="meat">
+                    <label for="meat">Мясо </label>
+                    <span class="tooltiptext">Щёчки, полба и пастернак</span> <!-- popup for food options -->
+                </p>
+                <p class="tooltip">
+                    <input type="radio" id="bird" name="food" value="bird">
+                    <label for="bird">Птица </label>
+                    <span class="tooltiptext">Жареный цыпленок с ореховым соусом</span>
+                </p>
             </div>
             <input type="submit" value="Отправить">
         </form>
       </div>
       
-      <div class="popup-overlay" id="popup">
+      <div class="popup-overlay" id="popup"> <!-- popup after form submitted -->
         <div class="popup-msg">
-            <p>Благодарим за предоставленную информацию</p>
             <a class="popup-close" href="#survey">&times;</a>
+            <p>Благодарим за предоставленную информацию</p>
         </div>
       </div>
 

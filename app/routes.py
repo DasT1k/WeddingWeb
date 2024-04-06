@@ -2,11 +2,6 @@ from flask import render_template, redirect, request, Blueprint, current_app
 from flask_wtf import FlaskForm
 from app.models import Quest, db
 
-# TODO: Deployment - choose where:
-# 1) google cloud - https://cloud.google.com/appengine/docs/standard/python3/building-app
-# 2) replit - https://youtu.be/7mMrDIZWfcA?si=7S1CVNGplGPTuR6I
-# also pack if needed - https://flask.palletsprojects.com/en/3.0.x/tutorial/install/
-
 bp = Blueprint("routes", __name__)
 
 
