@@ -4,7 +4,7 @@ simple one-pager site (<strong>HTML, CSS, Flask</strong>) with form to be filled
 <h3>How to run</h3>
 use command "flask run" ("app.py" initialize then) <br>
 open browser "localhost:5000" <br>
-website: https://dast1k.pythonanywhere.com/
+website: https://dast1k.pythonanywhere.com/ <br>
 open "/quests" to get statistics (info from DB)
 
 <h3>Tests</h3>
