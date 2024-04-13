@@ -83,6 +83,14 @@ h1 {
     margin: var(--gap-size);
 }
 
+.memo-form p a {
+    text-decoration-line: underline; /* split to separate properties from "text-decoration" */
+    -webkit-text-decoration-line: underline; /* because Safari don't support "text-decoration-line" */
+    text-decoration-style: dashed;
+    text-decoration-thickness: 5%;
+    text-underline-offset: 0.05em;
+}
+
 #survey {
     background: var(--custom-blue);
 }
@@ -102,8 +110,7 @@ form label {
 
 .tooltip .tooltiptext { /* popup for food options */
     visibility: hidden;
-    min-width: 200%;
-    max-width: 300%;
+    width: 200%;
     background-color: var(--custom-white);
     color: var(--custom-gray);
     font-size: calc(var(--font-size) / 1.4);
@@ -119,7 +126,7 @@ form label {
 }
 
 .dish .tooltip:nth-child(2) .tooltiptext {
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* used to keep all hints appear in same position */
 }
 
 .dish .tooltip:nth-child(3) .tooltiptext {
